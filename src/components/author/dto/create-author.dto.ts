@@ -1,5 +1,5 @@
-import { ApiPropertyOptional, IntersectionType } from "@nestjs/swagger";
-import { ApiProperty } from "@nestjsx/crud/lib/crud";
+import { ApiPropertyOptional, IntersectionType } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjsx/crud/lib/crud';
 
 export class WithPhotoDto {
   @ApiPropertyOptional({ type: 'file' })
@@ -35,6 +35,7 @@ export class CreateAuthorDto {
   public phoneNumber?: string;
 }
 
-export class CreateAuthorWhitPhotoDto extends IntersectionType(CreateAuthorDto, WithPhotoDto) {
-
-}
+export class CreateAuthorWhitPhotoDto extends IntersectionType(
+  CreateAuthorDto,
+  WithPhotoDto,
+) {}
