@@ -10,6 +10,6 @@ export class Gender extends AbstractEntity {
   @Column('varchar', { name: 'description', length: 260, nullable: false })
   public description: string;
 
-  @ManyToMany(() => Book, (b) => b.gengers)
+  @ManyToMany(() => Book, (b) => b.genders)
   public books: Array<Book>;
 }

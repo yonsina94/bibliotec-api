@@ -1,10 +1,6 @@
 import { ApiPropertyOptional, IntersectionType } from '@nestjs/swagger';
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
-
-export class WithPhotoDto {
-  @ApiPropertyOptional({ type: 'file' })
-  public photo?: Express.Multer.File;
-}
+import { WithPhotoDto } from '../../../commons/dto/with-photo.dto';
 
 export class CreateAuthorDto {
   @ApiProperty()
@@ -38,4 +34,4 @@ export class CreateAuthorDto {
 export class CreateAuthorWhitPhotoDto extends IntersectionType(
   CreateAuthorDto,
   WithPhotoDto,
-) {}
+) { }

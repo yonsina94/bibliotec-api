@@ -8,5 +8,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [TypeOrmModule.forFeature([Gender])],
   controllers: [GenderController],
   providers: [GenderService],
+  exports: [GenderService]
 })
-export class GenderModule {}
+export class GenderModule { }

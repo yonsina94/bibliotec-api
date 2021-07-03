@@ -26,5 +26,5 @@ export class Book extends AbstractEntity {
 
   @JoinColumn()
   @ManyToMany(() => Gender, (g) => g.books)
-  public gengers: Array<Gender>;
+  public genders: Array<Gender>;
 }

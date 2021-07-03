@@ -1,12 +1,13 @@
-import { ApiPropertyOptional } from '@nestjs/swagger';
+import { ApiPropertyOptional, IntersectionType } from '@nestjs/swagger';
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
 import { IsNotEmpty, IsUUID } from 'class-validator';
+import { WithPhotoDto } from 'src/commons/dto/with-photo.dto';
 
-export class GengerDetail {
+export class GenderDetail {
   @ApiProperty()
   @IsUUID()
   @IsNotEmpty()
-  gengerId: string;
+  genderId: string;
 }
 
 export class CreateBookDto {
@@ -22,9 +23,8 @@ export class CreateBookDto {
   @ApiProperty()
   public authorId: string;
 
-  @ApiPropertyOptional({ type: 'file' })
-  public coverPageImage?: Express.Multer.File;
-
-  @ApiProperty({ type: [GengerDetail] })
-  public gengers: Array<GengerDetail>;
+  @ApiProperty({ type: [GenderDetail] })
+  public genders: Array<GenderDetail>;
 }
+
+export class CreateBookWhitPhotoDto extends IntersectionType(CreateBookDto, WithPhotoDto) { }
