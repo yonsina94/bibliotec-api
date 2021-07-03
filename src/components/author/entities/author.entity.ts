@@ -33,7 +33,9 @@ export class Author extends AbstractEntity {
   @Column('varchar', { name: 'phoneNumber', length: 20, nullable: true })
   public phoneNumber?: string;
 
-  @Transform((photo) => Buffer.from(photo.value).toString('base64'), { toPlainOnly: true })
+  @Transform((photo) => Buffer.from(photo.value).toString('base64'), {
+    toPlainOnly: true,
+  })
   @Column('bytea', { name: 'photo', nullable: true })
   public photo?: Buffer;
 

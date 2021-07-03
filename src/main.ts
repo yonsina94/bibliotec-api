@@ -18,9 +18,10 @@ async function bootstrap() {
 
   app.enableCors();
   await app.listen(config.port, () => {
-    console.log(`Server listen in http://${config.host}:${config.port}`)
-    console.log(`For test porpuse use https://${config.host}:${config.port}/swagger`)
-  }
-  );
+    console.log(`Server listen in http://${config.host}:${config.port}`);
+    console.log(
+      `For test porpuse use http://${config.host}:${config.port}/swagger`,
+    );
+  });
 }
 bootstrap();
