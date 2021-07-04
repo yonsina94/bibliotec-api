@@ -37,7 +37,7 @@ import { Author } from './entities/author.entity';
 @ApiTags('author')
 @Controller('author')
 export class AuthorController implements CrudController<Author> {
-  constructor(public service: AuthorService) { }
+  constructor(public service: AuthorService) {}
 
   @Override('createOneBase')
   @ApiConsumes('multipart/form-data')

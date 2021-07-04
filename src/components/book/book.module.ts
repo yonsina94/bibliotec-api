@@ -10,4 +10,4 @@ import { GenderModule } from '../gender/gender.module';
   controllers: [BookController],
   providers: [BookService],
 })
-export class BookModule { }
+export class BookModule {}

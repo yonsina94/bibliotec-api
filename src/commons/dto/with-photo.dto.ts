@@ -1,6 +1,6 @@
-import { ApiPropertyOptional } from "@nestjs/swagger";
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
 export class WithPhotoDto {
-    @ApiPropertyOptional({ type: 'file' })
-    public photo?: Express.Multer.File;
+  @ApiPropertyOptional({ type: 'file' })
+  public photo?: Express.Multer.File;
 }

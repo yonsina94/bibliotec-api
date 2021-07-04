@@ -34,4 +34,4 @@ export class CreateAuthorDto {
 export class CreateAuthorWhitPhotoDto extends IntersectionType(
   CreateAuthorDto,
   WithPhotoDto,
-) { }
+) {}

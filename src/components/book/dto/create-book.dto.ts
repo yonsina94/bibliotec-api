@@ -1,10 +1,11 @@
 import { ApiPropertyOptional, IntersectionType } from '@nestjs/swagger';
 import { ApiProperty } from '@nestjsx/crud/lib/crud';
-import { IsNotEmpty, IsUUID } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsArray, IsNotEmpty, IsUUID } from 'class-validator';
 import { WithPhotoDto } from 'src/commons/dto/with-photo.dto';
 
 export class GenderDetail {
-  @ApiProperty()
+  @ApiProperty({ type: String })
   @IsUUID()
   @IsNotEmpty()
   genderId: string;
@@ -23,8 +24,18 @@ export class CreateBookDto {
   @ApiProperty()
   public authorId: string;
 
-  @ApiProperty({ type: [GenderDetail] })
-  public genders: Array<GenderDetail>;
+  @IsArray()
+  @Type(() => GenderDetail)
+  @ApiProperty({
+    type: 'array',
+    items: { type: GenderDetail },
+    isArray: true,
+    require: true,
+  })
+  public genders: GenderDetail[];
 }
 
-export class CreateBookWhitPhotoDto extends IntersectionType(CreateBookDto, WithPhotoDto) { }
+export class CreateBookWhitPhotoDto extends IntersectionType(
+  CreateBookDto,
+  WithPhotoDto,
+) {}
