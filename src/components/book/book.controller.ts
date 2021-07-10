@@ -1,13 +1,7 @@
 import {
   Controller,
-  Get,
-  Post,
   Body,
-  Patch,
-  Param,
-  Delete,
   UseInterceptors,
-  Request,
   UploadedFile,
 } from '@nestjs/common';
 import { BookService } from './book.service';
